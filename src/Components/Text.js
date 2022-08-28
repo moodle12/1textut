@@ -65,32 +65,12 @@ export default function Text(props) {
       <button className="btn btn-info mx-2" onClick={handextra}>Remove Extra Spaces</button>
     </div>
     <div className="container my-3" style={{color: props.mode==='dark'?'white':'#042743'}}>
-    {(() => {
-
-if (le === 0) {
-
-  return (
-    <div style={{color: props.mode==='dark'?'white':'#042743'}}>
-      0 words and {Text2.length} characters
-      <p>{0 * Text2.split(' ').length } Minutes an average person would read in</p>
-    </div> 
-
-  )
-
-}  else {
-
-  return (
 
     <div style={{color: props.mode==='dark'?'white':'#042743'}}>
-      <p>{Text2.split(' ').length} words and {Text2.length} characters</p>
+      <p>{Text2.split(' ').filter((element)=>{return element.length!=0}).length} words and {Text2.length} characters</p>
       <p>{0.008 * Text2.split(' ').length } Minutes an average person would read in</p> 
     </div>
 
-  )
-
-}
-
-})()}
         {/* <h1>Text Analysis</h1>
         <p>{Text2.split(' ').length} words and {Text2.length} characters</p>
         <p>{0.008 * Text2.split(' ').length } Minutes an average person would read in</p> */}
